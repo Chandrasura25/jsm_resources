@@ -10,12 +10,25 @@ const Navbar = () => {
           <Image src="/jsm-logo.svg" alt="logo" width={55} height={40} />
         </Link>
 
-        <Image src="/hamburger-menu.svg" alt="Hamburger Menu" width={30} height={30} className="block md:hidden" />
+        <Image
+          src="/hamburger-menu.svg"
+          alt="Hamburger Menu"
+          width={30}
+          height={30}
+          className="block md:hidden"
+        />
 
         <ul className="flex-center gap-x-3 max-md:hidden md:gap-x-10">
-            <li>
-                <Link href="/">Next.js 13.4 Course</Link>
-            </li>
+          <li className="body-text text-gradient_blue-purple !font-bold">
+            <Link href="https://jsmastery.pro/next13" target="_blank">
+              Next.js 13.4 Course
+            </Link>
+          </li>
+          <li className="body-text !font-bold">
+            <Link href="https://jsmastery.pro/masterclass" target="_blank">
+              Master Class
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
