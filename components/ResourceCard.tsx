@@ -7,9 +7,8 @@ interface Props {
   title: string;
   image: string;
   downloadNumber: number;
-  slug: string;
 }
-const ResourceCard = ({ id, title, image, downloadNumber, slug }: Props) => {
+const ResourceCard = ({ id, title, image, downloadNumber }: Props) => {
   return (
     <Card className="w-full max-w-filt border-0 !bg-transparent sm:max-w-[356px]">
       <Link href={`/resource/${id}`}>
