@@ -25,6 +25,7 @@ export const getResources = async (params: GetResourcesParams) => {
         category
       }`
     );
+    return resources;
   } catch (error) {
     console.log(error);
   }
