@@ -21,4 +21,12 @@ export function buildQuery(params: BuildQueryParams) {
   //calculate pagination limits
   const offset = (page - 1) * perPage;
   const limit = perPage;
+
+  if (conditions.length > 1) {
+    return `${conditions[0]} && (${conditions
+      .slice(1)
+      .join(" && ")})[${offset}...${limit}]`;
+  } else {
+    return `${conditions[0]}[${offset}...${limit}]`;
+  }
 }
