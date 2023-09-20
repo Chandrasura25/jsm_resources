@@ -13,8 +13,8 @@ const ResourceCard = ({ id, title, image, downloadNumber, slug }: Props) => {
   return (
     <Card className="w-full max-w-filt border-0 !bg-transparent sm:max-w-[356px]">
       <Link href={`/resource/${id}`}>
-        <CardHeader>
-          <div className="">
+        <CardHeader className="flex-center flex-col gap-2.5 !p-0">
+          <div className="h-fit w-full">
             <Image
               src={image}
               alt={title}
