@@ -4,4 +4,11 @@ interface GetResourcesParams {
   category: string;
   page: string;
 }
-export const getResources = async (params: GetResourcesParams) => {};
+export const getResources = async (params: GetResourcesParams) => {
+    const {query, category, page}= params;
+    try{
+
+    }catch(error){
+        console.log(error)
+    }
+};
