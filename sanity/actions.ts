@@ -1,17 +1,23 @@
-import { readClient } from './lib/client';
+import { readClient } from "./lib/client";
 import { groq } from "next-sanity";
+import { buildQuery } from "./utils";
 interface GetResourcesParams {
   query: string;
   category: string;
   page: string;
 }
 export const getResources = async (params: GetResourcesParams) => {
-    const {query, category, page}= params;
-    try{
-       const resources = await readClient.fetch(
-        groq``
-       )
-    }catch(error){
-        console.log(error)
-    }
+  const { query, category, page } = params;
+  try {
+    const resources = await readClient.fetch(
+      groq`${buildQuery({
+        type: "resource",
+        query,
+        category,
+        page: parseInt(page),
+      })}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
 };
