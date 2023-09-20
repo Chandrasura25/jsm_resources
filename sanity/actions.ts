@@ -15,7 +15,15 @@ export const getResources = async (params: GetResourcesParams) => {
         query,
         category,
         page: parseInt(page),
-      })}`
+      })}{
+        title,
+        _id,
+        downloadLink,
+        "image":poster.asset->url,
+        views,
+        slug,
+        category
+      }`
     );
   } catch (error) {
     console.log(error);
