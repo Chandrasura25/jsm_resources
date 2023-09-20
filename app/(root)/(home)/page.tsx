@@ -27,7 +27,7 @@ const Page = async () => {
           {resources?.length > 0 ? (
             resources.map((resource: any) => <ResourceCard />)
           ) : (
-            <p className="body-regular text-white-400">No resources found</p>
+            <p className="body-regular text-white-400 capitalize">No resources found</p>
           )}
         </div>
       </section>
