@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardHeader } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 import Image from "next/image";
 interface Props {
@@ -23,8 +23,17 @@ const ResourceCard = ({ id, title, image, downloadNumber, slug }: Props) => {
               width={440}
             />
           </div>
+          <CardTitle className="text-white paragragh-semibold line-clamp-1 w-full text-left">
+            {title}
+          </CardTitle>
         </CardHeader>
       </Link>
+      <CardContent className="flex-between mt-4 p-0">
+        <div className="flex-center body-medium gap-1.5 text-white">
+          <Image src="/downloads.svg" width={20} height={20} alt="download" />
+          {downloadNumber}
+        </div>
+      </CardContent>
     </Card>
   );
 };
