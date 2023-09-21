@@ -35,5 +35,5 @@ interface UrlQueryParams {
   value: string | null;
 }
 export function formUrlQuery({ params, key, value }: UrlQueryParams) {
-  const currentUrl = qs
+  const currentUrl = qs.parse(params)
 }
