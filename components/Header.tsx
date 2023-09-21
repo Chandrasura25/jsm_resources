@@ -1,6 +1,10 @@
 import React from 'react'
-
-const Header = () => {
+interface Props{
+    title: string;
+    query:string;
+    category: string
+}
+const Header = ({title, query, category}:Props) => {
   return (
     <div>Header</div>
   )
