@@ -3,6 +3,8 @@ import ResourceCard from "@/components/ResourceCard";
 import SearchForm from "@/components/SearchForm";
 import { getResources } from "@/sanity/actions";
 
+export const revalidate = 900;
+
 const Page = async () => {
   const resources = await getResources({
     query: "",
