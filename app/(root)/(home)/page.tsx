@@ -5,8 +5,10 @@ import SearchForm from "@/components/SearchForm";
 import { getResources } from "@/sanity/actions";
 
 export const revalidate = 900;
-
-const Page = async () => {
+interface Props {
+  searchParams: { [key: string]: string | undefined };
+}
+const Page = async ({ searchParams }: Props) => {
   const resources = await getResources({
     query: "",
     category: "",
