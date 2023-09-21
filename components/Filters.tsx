@@ -15,8 +15,14 @@ const Filters = () => {
         key: "category",
         value: null,
       });
-    } else{
+    } else {
       setActive(link);
+
+      newUrl = formUrlQuery({
+        params: searchParams.toString(),
+        key: "category",
+        value: null,
+      });
     }
   };
   return (
