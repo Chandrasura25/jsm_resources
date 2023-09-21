@@ -1,3 +1,4 @@
+import qs from 'query-string'
 interface BuildQueryParams {
   type: string;
   query: string;
@@ -26,4 +27,13 @@ export function buildQuery(params: BuildQueryParams) {
         .slice(1)
         .join(" && ")})][${offset}...${limit}]`
     : `${conditions[0]}][${offset}...${limit}]`;
+}
+
+interface UrlQueryParams {
+  params: string;
+  key: string;
+  value: string | null;
+}
+export function formUrlQuery({ params, key, value }: UrlQueryParams) {
+  const currentUrl = qs
 }
