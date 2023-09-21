@@ -1,11 +1,12 @@
 "use client";
 import { formUrlQuery } from "@/sanity/utils";
 import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 const links = ["all", "Next 13", "frontend", "backend", "fullstack"];
 const Filters = () => {
   const [active, setActive] = useState("");
   const searchParams = useSearchParams();
+  let router = useRouter()
   const handleFilter = (link: string) => {
     let newUrl = "";
     if (active === link) {
