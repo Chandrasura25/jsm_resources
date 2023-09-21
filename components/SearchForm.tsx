@@ -19,6 +19,11 @@ const SearchForm = () => {
           key: "query",
           value: search,
         });
+      }else {
+        newUrl = formUrlQuery({
+          params: searchParams.toString(),
+          keysToRemove :['query']
+        });
       }
 
       router.push(newUrl, { scroll: false });
