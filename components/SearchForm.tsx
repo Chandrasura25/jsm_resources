@@ -7,22 +7,25 @@ import { formUrlQuery } from "@/sanity/utils";
 
 const SearchForm = () => {
   const [search, setSearch] = useState("");
-  const searchParams = useSearchParams()
-  const router = useRouter()
-  const pathname = usePathname()
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
   useEffect(() => {
-    const delayDebounceFn = setTimeout(()=>{
+    const delayDebounceFn = setTimeout(() => {
+      let newUrl = "";
       if (search) {
-        const newUrl = formUrlQuery({
+        newUrl = formUrlQuery({
           params: searchParams.toString(),
           key: "query",
           value: search,
         });
-      } 
-    },300)
-    return ()=>clearTimeout(delayDebounceFn)
-  }, [search])
-  
+      }
+
+      router.push(newUrl, { scroll: false });
+    }, 300);
+    return () => clearTimeout(delayDebounceFn);
+  }, [search]);
+
   return (
     <form className="flex-center mx-auto mt-10 w-full sm:-mt-10 sm:px-5">
       <label className="flex-center relative w-full max-w-3xl">
@@ -38,7 +41,7 @@ const SearchForm = () => {
           type="text"
           placeholder="Search"
           value={search}
-          onChange={(e)=> setSearch(e.target.value)}
+          onChange={(e) => setSearch(e.target.value)}
         />
       </label>
     </form>
