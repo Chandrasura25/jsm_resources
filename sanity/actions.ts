@@ -36,7 +36,7 @@ export const getResourcesPlaylist = async ()=> {
       groq`*[_type == "resourcePlaylist"]{
         _id,
         title,
-        respirces[0...6]->{
+        resources[0...6]->{
           title,
           _id,
         downloadLink,
