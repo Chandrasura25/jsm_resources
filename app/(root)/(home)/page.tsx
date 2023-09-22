@@ -55,6 +55,11 @@ const Page = async ({ searchParams }: Props) => {
           </div>
         </section>
       )}
+      {resourcesPlaylist.map((item:any)=>(
+        <section className="flex-center mt-6 w-full flex-col sm:mt-20" key={item._id}>
+          <h1 className="heading3 self-start text-white-800"></h1>
+        </section>
+      ))}
     </main>
   );
 };
