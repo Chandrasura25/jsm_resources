@@ -18,7 +18,7 @@ const ResourceCard = ({
 }: Props) => {
   return (
     <Card className="w-full max-w-filt border-0 !bg-transparent sm:max-w-[356px]">
-      <Link href={downloadLink}>
+      <Link href={downloadLink} target="_blank">
         <CardHeader className="flex-center flex-col gap-2.5 !p-0">
           <div className="h-fit w-full">
             <Image
@@ -41,6 +41,7 @@ const ResourceCard = ({
         </div>
         <Link
           href={downloadLink}
+          target="_blank"
           className="flex-center text-gradient_purple-blue body-semibold gap-1.5"
         >
           Download Now
