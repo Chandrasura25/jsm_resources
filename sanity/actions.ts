@@ -30,8 +30,7 @@ export const getResources = async (params: GetResourcesParams) => {
     console.log(error);
   }
 };
-export const getResourcesPlaylist = async (params: GetResourcesParams) => {
-  const { query, category, page } = params;
+export const getResourcesPlaylist = async ()=> {
   try {
     const resources = await readClient.fetch(
       groq`*[_type == "resourcePlaylist"]{
